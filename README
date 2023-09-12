@@ -1,0 +1,20 @@
+Prunescu Bogdan-Andrei 321CA
+
+	Pentru a putea incepe tema am folosit biblioteca nlohmann pentru
+parsarea JSONurilor (mai specific obiectul json si functiile parse, dump si
+operatorul "[]") si skeletul din laboratorul 9.
+	Implementarea temei se afla in fisierul client.cpp, unde am scris
+toate cerintele temei. Clientul asteapta input de la user dupa care verifica
+prin mai multe if elseuri care comanda este cea dorita. O comanda este invalida
+chiar daca dupa comanda apar caractere in plus. Unele comenzi afiseaza apoi ce
+fielduri sunt nevoie sa fie completate, dupa care clientul trimite o cerere la
+serverul si asteapta un raspuns. Raspunsul este parsat si se verifica status
+codeul pentru afisarea unui mesaj de validare sau de eroare (in functie de caz).
+	In plus: 1. clientul nu va trimite o cerere daca:
+		- nu are stocat cookieul primit la login, si comanda are nevoie
+		  de el
+		- nu are stocat JWT primit la enter_library, si comanda are
+		  nevoie de el
+		 2. clientul nu va acepta inputul daca:
+		- usernameul sau parola contin spatii
+		- id-ul cartii nu este un numar
